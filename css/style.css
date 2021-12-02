@@ -1,0 +1,110 @@
+@import "reset.css";
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica", Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+#container {
+  width: 320px;
+  height: 1000px;
+  background: #FFFFFF;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#container .list-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFFFFF;
+  z-index: 1;
+}
+
+#container .list-view ul li {
+  height: 70px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#container .list-view ul li:hover,
+#container .details-view ul li.user:hover {
+  background: #efefef;
+  cursor: pointer;
+}
+
+#container .list-view ul li:before,
+#container .details-view .background .user:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url("../i/default-img.png");
+  background-size: 100%;
+  margin: 10px 15px;
+}
+
+#container .details-view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  bottom: 0;
+  z-index: 2;
+  background: #FFFFFF;
+
+  transition: transform 0.25s;
+}
+
+#container .details-view.show {
+  will-change: transform;
+  transform: translateX(0);
+}
+
+#container .details-view .background {
+  height: 70px;
+  width: 100%;
+  padding-left: 40px;
+  background: url("../i/background-active.jpg");
+}
+
+#container .details-view .back {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background: url("../i/back-icon.png");
+  background-size: 100%;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#container .details-view li {
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#container .details-view li i {
+  font-size: 1.2rem;
+  margin: 0 15px;
+}
+
+li.people-title {
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: larger;
+}

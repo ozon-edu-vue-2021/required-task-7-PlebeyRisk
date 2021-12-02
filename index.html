@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="i/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Тестовое задание</title>
+</head>
+<body>
+  <div id="container">
+    <div class="list-view">
+      <ul id="contacts-list" class="contacts-list">
+      </ul>
+    </div>
+    <div class="details-view">
+      <div id="back" class="back"></div>
+      <div class="background">
+        <li class="user">
+          <strong>Павел</strong>
+        </li>
+      </div>
+      <div><ul id="detail-list">
+        <li class="people-title">Друзья</li>
+        <li class="user friend"><i class="fa fa-male"></i><span >Иван</span></li>
+        <li class="user friend"><i class="fa fa-male"></i><span >Максим</span></li>
+        <li class="user friend"><i class="fa fa-male"></i><span >Марат</span></li>
+        <li class="people-title">Не в друзьях</li>
+        <li class="user not-friend"><i class="fa fa-male"></i><span >Вася</span></li>
+        <li class="user not-friend"><i class="fa fa-male"></i><span >Кирилл</span></li>
+        <li class="user not-friend"><i class="fa fa-male"></i><span >Степан</span></li>
+        <li class="people-title">Популярные люди</li>
+        <li class="user popular"><i class="fa fa-male"></i><span >Елена</span></li>
+        <li class="user popular"><i class="fa fa-male"></i><span >Оля</span></li>
+        <li class="user popular"><i class="fa fa-male"></i><span >Никита</span></li>
+      </ul></div>
+    </div>
+  </div>
+  <template id="user-template">
+    <li class="user" data-id="">
+      <strong></strong>
+    </li>
+  </template>
+</body>
+<script src="main.js"></script>
+</html>
