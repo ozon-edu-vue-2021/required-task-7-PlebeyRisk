@@ -49,21 +49,28 @@ const calcPopularity = () => {
     });
   });
 
+  const sortFunc = (a, b) => {
+    if (a.value - b.value === 0) {
+      if (users[a.userId].name > users[b.userId].name) {
+        return -1;
+      }
+
+      if (users[a.userId].name < users[b.userId].name) {
+        return 1;
+      }
+
+      return 0;
+    }
+
+    return a.value - b.value;
+  };
+
   popularity = Object.entries(popularityMap)
     .reduce((acc, [key, value]) => {
       acc.push({ userId: key, value });
       return acc;
     }, [])
-    .sort((a, b) => a.value - b.value)
-    .sort((a, b) => {
-      if (users[a.userId].name > users[b.userId].name) {
-        return 1;
-      }
-      if (users[a.userId].name < users[b.userId].name) {
-        return -1;
-      }
-      return 0;
-    })
+    .sort(sortFunc)
     .map((item) => item.userId)
     .reverse();
 }
