@@ -37,7 +37,7 @@ const initialState = async () => {
   await loadUsers();
 
   renderContactList();
-  resetRoute();
+  // resetRoute();
 }
 
 const calcPopularity = () => {
@@ -170,7 +170,7 @@ const hideUserInfo = () => {
 };
 
 const goToUsersList = () => {
-  resetRoute()
+  // resetRoute();
   hideUserInfo();
 };
 
@@ -182,7 +182,7 @@ const goToUser = (userId) => {
   calcPopularUsersForUser(userId);
   calcNotFriendsForUser(userId);
 
-  window.location = window.location.origin + `#user/${userId}`;
+  // window.location = window.location.origin + `#user/${userId}`;
 
   showUserInfo(userId);
   window.scrollTo({ top: 0, behavior: 'smooth' });
